@@ -164,14 +164,14 @@ sudo hostnamectl set-hostname hungry-beast
 
 ### Flathub Setup
 
-Fedora comes with a neutered version of [Flatpak](https://flatpak.org/). [Flathub](https://flathub.org/) is where the actual apps are.
+Fedora comes with a neutered version of [Flatpak](https://flatpak.org/). [Flathub](https://flathub.org/) is where the actual apps are. I recommend disabling unverified and proprietary software by using `--subset=verified_floss`.
 
 ```bash
 # Remove the limited Fedora repo
 flatpak remote-delete fedora
 
 # Add the real Flathub
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists --subset=verified_floss flathub-verified-floss https://flathub.org/repo/flathub.flatpakrepo
 
 # Update everything
 flatpak update --appstream
